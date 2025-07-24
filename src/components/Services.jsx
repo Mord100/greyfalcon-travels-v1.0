@@ -95,7 +95,7 @@ export default function ServicesSection() {
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center space-x-4">
             <h1 className="text-2xl font-bold text-gray-800">
-              TRAVEL <span className="font-normal text-blue-600">Services</span>
+              OUR <span className="font-normal text-blue-600">Services</span>
             </h1>
           </div>
 
@@ -103,7 +103,7 @@ export default function ServicesSection() {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] sm:auto-rows-[220px] lg:auto-rows-[240px] gap-4 sm:gap-6 mb-12 lg:mb-16">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const IconComponent = service.icon;
             
             // Hero card (Leisure Travel)
