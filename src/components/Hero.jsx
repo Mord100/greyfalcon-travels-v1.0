@@ -49,7 +49,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <div id="hero" className="relative min-h-screen overflow-hidden">
+    <div id="home" className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

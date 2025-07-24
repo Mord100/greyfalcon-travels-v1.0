@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   HiLocationMarker, 
   HiGlobeAlt, 
@@ -10,23 +10,65 @@ import {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const menuItems = [
-    { name: 'About Us ', icon: HiLocationMarker, href: '#' },
-    { name: 'Services', icon: HiGlobeAlt, href: '#' },
-    { name: 'Destinations', icon: HiCalendar, href: '#' },
-    { name: 'Contact Us', icon: HiPhone, href: '#' }
+    { name: 'About Us ', id: 'about', icon: HiLocationMarker },
+    { name: 'Services', id: 'services', icon: HiGlobeAlt },
+    { name: 'Contact Us', id: 'contact', icon: HiCalendar },
   ];
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Immediately update active section to prevent flicker
+      setActiveSection(sectionId);
+      
+      const offsetTop = element.offsetTop - 80; // Account for sticky navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+      
+      setIsMenuOpen(false); // Close mobile menu after clicking
+    }
+  };
+
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'services', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const height = element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center">
           {/* Logo */}
+          <a href="/">
           <div className="mr-6 flex items-center space-x-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-900">
               <HiGlobeAlt className="h-5 w-5 text-white" />
@@ -35,23 +77,29 @@ export default function Navbar() {
               Grey Falcon Travels 
             </span>
           </div>
+          </a>
+          
 
           {/* Desktop Navigation */}
-          <nav className="flex items-center space-x-6 text-sm font-medium ml-6">
-            <a
-              href="#"
-              className="transition-colors hover:text-slate-900 text-slate-900"
+          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium ml-6">
+            <button
+              onClick={() => scrollToSection('home')}
+              className={`transition-colors hover:text-slate-900 ${
+                activeSection === 'home' ? 'text-blue-500' : 'text-slate-900'
+              }`}
             >
               Home
-            </a>
-            {menuItems.slice(0, -1).map((item) => (
-              <a
+            </button>
+            {menuItems.map((item) => (
+              <button
                 key={item.name}
-                href={item.href}
-                className="transition-colors hover:text-slate-900 text-slate-600"
+                onClick={() => scrollToSection(item.id)}
+                className={`transition-colors hover:text-slate-900 ${
+                  activeSection === item.id ? 'text-blue-500' : 'text-slate-600'
+                }`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -62,7 +110,7 @@ export default function Navbar() {
                 href="#"
                 className="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-900 text-white hover:bg-slate-800 h-10 px-4 py-2 ml-6"
               >
-                Contact Us
+                WhatsApp
               </a>
             </div>
           </div>
@@ -116,26 +164,28 @@ export default function Navbar() {
           {/* Menu Items */}
           <nav className="flex-1 px-6 py-6">
             <div className="space-y-1">
-              <a
-                href="#"
-                className="flex items-center px-3 py-3 text-sm font-medium text-slate-900 rounded-md hover:bg-slate-100 transition-colors"
+              <button
+                onClick={() => scrollToSection('home')}
+                className={`flex items-center w-full px-3 py-3 text-sm font-medium rounded-md hover:bg-slate-100 transition-colors text-left ${
+                  activeSection === 'home' ? 'text-slate-900 bg-slate-50' : 'text-slate-900'
+                }`}
               >
                 Home
-              </a>
+              </button>
               {menuItems.map((item, index) => {
-                // const IconComponent = item.icon;
                 return (
-                  <a
+                  <button
                     key={item.name}
-                    href={item.href}
-                    className="flex items-center space-x-3 px-3 py-3 text-sm font-medium text-slate-600 rounded-md hover:bg-slate-100 hover:text-slate-900 transition-colors"
+                    onClick={() => scrollToSection(item.id)}
+                    className={`flex items-center w-full space-x-3 px-3 py-3 text-sm font-medium rounded-md hover:bg-slate-100 hover:text-slate-900 transition-colors text-left ${
+                      activeSection === item.id ? 'text-slate-900 bg-slate-50 ' : 'text-slate-600'
+                    }`}
                     style={{
                       animationDelay: isMenuOpen ? `${index * 50}ms` : '0ms'
                     }}
                   >
-                    {/* <IconComponent className="h-5 w-5" /> */}
                     <span>{item.name}</span>
-                  </a>
+                  </button>
                 );
               })}
             </div>
@@ -147,7 +197,7 @@ export default function Navbar() {
               href="#"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 bg-slate-900 text-white hover:bg-slate-800 h-10 px-4 py-2 w-full"
             >
-              Contact Us
+              WhatsApp
             </a>
           </div>
         </div>
