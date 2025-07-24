@@ -42,16 +42,6 @@ export default function ServicesSection() {
     },
     {
       id: 4,
-      icon: HiHome,
-      title: "Deluxe Packages",
-      description: "The ultimate in luxury travel with world-class accommodations and personalized service throughout.",
-      features: ["Luxury resorts", "Private transfers", "Personal travel advisor"],
-      color: "#22aed8",
-      size: "square",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=400&fit=crop&crop=center"
-    },
-    {
-      id: 5,
       icon: HiCamera,
       title: "Holiday Packages",
       description: "Special seasonal getaways and celebration trips designed to make your holidays unforgettable.",
@@ -61,6 +51,16 @@ export default function ServicesSection() {
       image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=300&fit=crop&crop=center"
     },
     {
+      id: 5,
+      icon: HiHome,
+      title: "Deluxe Packages",
+      description: "The ultimate in luxury travel with world-class accommodations and personalized service throughout.",
+      features: ["Luxury resorts", "Private transfers", "Personal travel advisor"],
+      color: "#22aed8",
+      size: "square",
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=400&fit=crop&crop=center"
+    },
+    {
       id: 6,
       icon: HiChatAlt2,
       title: "Custom Solutions",
@@ -68,6 +68,16 @@ export default function ServicesSection() {
       features: ["Bespoke planning", "Special requirements", "24/7 support"],
       color: "#383E72",
       size: "contact"
+    },
+    {
+      id: 7,
+      icon: HiShieldCheck,
+      title: "Travel Insurance",
+      description: "Comprehensive coverage and peace of mind for all your travel adventures worldwide.",
+      features: ["Medical coverage", "Trip protection", "Emergency assistance"],
+      color: "#22aed8",
+      size: "square",
+      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=400&fit=crop&crop=center"
     }
   ];
 
@@ -76,7 +86,7 @@ export default function ServicesSection() {
       case 'hero':
         return 'col-span-1 sm:col-span-2 lg:col-span-2 row-span-2';
       case 'tall':
-        return 'col-span-1 row-span-1 lg:row-span-2';
+        return 'col-span-1 row-span-1 sm:row-span-2';
       case 'wide':
         return 'col-span-1 sm:col-span-2 row-span-1';
       case 'square':
@@ -92,21 +102,18 @@ export default function ServicesSection() {
     <section id='services' className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex justify-between items-center mb-12">
-          <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold text-gray-800">
-              OUR <span className="font-normal text-blue-600">Services</span>
-            </h1>
-          </div>
-
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+            OUR <span className="text-blue-600">Services</span>
+          </h2>
         </div>
 
-        {/* Bento Grid */}
+        {/* Improved Bento Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] sm:auto-rows-[220px] lg:auto-rows-[240px] gap-4 sm:gap-6 mb-12 lg:mb-16">
           {services.map((service) => {
             const IconComponent = service.icon;
             
-            // Hero card (Leisure Travel)
+            // Hero card (Leisure Travel) - Improved responsive text
             if (service.size === 'hero') {
               return (
                 <div 
@@ -118,40 +125,75 @@ export default function ServicesSection() {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${service.image})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/25" />
                   
-                  <div className="relative z-10 h-full flex flex-col justify-end p-6 lg:p-8 text-white">
+                  <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 lg:p-8 text-white">
                     <div 
-                      className="inline-flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl mb-4 bg-white/20 backdrop-blur-sm"
+                      className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl mb-3 sm:mb-4 bg-white/20 backdrop-blur-sm"
                     >
-                      <IconComponent className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                     </div>
                     
-                    <h3 className="text-2xl lg:text-3xl font-bold mb-3 lg:mb-4">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold mb-2 sm:mb-3 lg:mb-4 leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-sm lg:text-base opacity-90 mb-4 lg:mb-6 leading-relaxed">
+                    <p className="text-xs sm:text-sm lg:text-base opacity-90 mb-3 sm:mb-4 lg:mb-6 leading-relaxed line-clamp-3">
                       {service.description}
                     </p>
                     
-                    <ul className="space-y-2 mb-4 lg:mb-6">
+                    <ul className="space-y-1 sm:space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-xs lg:text-sm opacity-80">
+                        <li key={idx} className="flex items-center text-xs sm:text-xs lg:text-sm opacity-80">
                           <div 
-                            className="w-2 h-2 rounded-full mr-3 flex-shrink-0 bg-white/60"
+                            className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mr-2 sm:mr-3 flex-shrink-0 bg-white/60"
                           />
-                          {feature}
+                          <span className="truncate">{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    
                   </div>
                 </div>
               );
             }
 
-            // Tall card (Corporate Travel)
+            // Tall card (Corporate Travel) - Improved responsive text
             if (service.size === 'tall') {
+              return (
+                <div 
+                  key={service.id}
+                  className={`group bg-white rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden ${getSizeClasses(service.size)}`}
+                >
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${service.image})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"/>
+                  
+                  <div className="h-full flex flex-col justify-end p-4 sm:p-5 lg:p-6 text-white relative z-10">
+                    <div 
+                      className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl mb-3 lg:mb-4 bg-white/20 backdrop-blur-sm"
+                    >
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                    
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 lg:mb-3 leading-tight">{service.title}</h3>
+                    <p className="text-xs sm:text-sm opacity-90 mb-3 lg:mb-4 leading-relaxed line-clamp-3">{service.description}</p>
+                    
+                    <ul className="space-y-1 lg:space-y-2">
+                      {service.features.slice(0, 2).map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-xs opacity-80">
+                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full mr-2 bg-white/60 flex-shrink-0" />
+                          <span className="truncate">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            }
+
+            // Square cards (Premium & Deluxe) - Improved responsive text
+            if (service.size === 'square') {
               return (
                 <div 
                   key={service.id}
@@ -163,60 +205,21 @@ export default function ServicesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"/>
                   
-                  <div className="h-full flex flex-col justify-end p-5 lg:p-6 text-white relative z-10">
+                  <div className="h-full flex flex-col justify-end p-4 sm:p-5 lg:p-6 text-white relative z-10">
                     <div 
-                      className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-3 lg:mb-4 bg-white/20 backdrop-blur-sm"
+                      className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl mb-2 sm:mb-3 bg-white/20 backdrop-blur-sm"
                     >
-                      <IconComponent className="w-6 h-6 text-white" />
+                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                     </div>
                     
-                    <h3 className="text-xl lg:text-2xl font-bold mb-2 lg:mb-3">{service.title}</h3>
-                    <p className="text-sm opacity-90 mb-3 lg:mb-4 leading-relaxed">{service.description}</p>
-                    
-                    <ul className="space-y-1 lg:space-y-2 mb-3 lg:mb-4">
-                      {service.features.slice(0, 2).map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-xs opacity-80">
-                          <div className="w-1.5 h-1.5 rounded-full mr-2 bg-white/60 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                
+                    <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2 leading-tight">{service.title}</h3>
+                    <p className="text-xs opacity-90 leading-relaxed line-clamp-2">{service.description}</p>
                   </div>
                 </div>
               );
             }
 
-            // Square cards (Premium & Deluxe)
-            if (service.size === 'square') {
-              return (
-                <div 
-                  key={service.id}
-                  className={`group bg-white rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden ${getSizeClasses(service.size)}`}
-                >
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${service.image})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"/>
-                  
-                  <div className="h-full flex flex-col justify-end p-5 lg:p-6 text-white relative z-10">
-                    <div 
-                      className="inline-flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-xl mb-3 bg-white/20 backdrop-blur-sm"
-                    >
-                      <IconComponent className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                    </div>
-                    
-                    <h3 className="text-lg lg:text-xl font-bold mb-2">{service.title}</h3>
-                    <p className="text-xs lg:text-sm opacity-90 mb-3 leading-relaxed line-clamp-2">{service.description}</p>
-                    
-                    
-                  </div>
-                </div>
-              );
-            }
-
-            // Wide card (Holiday Packages)
+            // Wide card (Holiday Packages) - Improved responsive text
             if (service.size === 'wide') {
               return (
                 <div 
@@ -227,77 +230,72 @@ export default function ServicesSection() {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${service.image})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/25" />
                   
-                  <div className="h-full flex items-center p-5 lg:p-6 relative z-10">
-                    <div className="flex-1 text-white">
+                  <div className="h-full flex items-center p-4 sm:p-5 lg:p-6 relative z-10">
+                    <div className="flex-1 text-white min-w-0">
                       <div 
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-white/20 backdrop-blur-sm"
+                        className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl mb-3 sm:mb-4 bg-white/20 backdrop-blur-sm"
                       >
-                        <IconComponent className="w-6 h-6 text-white" />
+                        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                       
-                      <h3 className="text-xl lg:text-2xl font-bold mb-3">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 leading-tight">
                         {service.title}
                       </h3>
-                      <p className="text-sm lg:text-base opacity-90 mb-4 leading-relaxed">
+                      <p className="text-xs sm:text-sm opacity-90 mb-3 sm:mb-4 leading-relaxed line-clamp-2">
                         {service.description}
                       </p>
                       
-                      <ul className="space-y-1 mb-4">
+                      <ul className="space-y-1">
                         {service.features.slice(0, 2).map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-xs lg:text-sm opacity-80">
-                            <div className="w-2 h-2 rounded-full mr-3 bg-white/60 flex-shrink-0" />
-                            {feature}
+                          <li key={idx} className="flex items-center text-xs opacity-80">
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full mr-2 sm:mr-3 bg-white/60 flex-shrink-0" />
+                            <span className="truncate">{feature}</span>
                           </li>
                         ))}
                       </ul>
-                      
-                 
                     </div>
                   </div>
                 </div>
               );
             }
 
-            // Contact card (Custom Solutions)
+            // Contact card (Custom Solutions) - Improved responsive text
             return (
               <div 
                 key={service.id}
-                className={`group rounded-2xl lg:rounded-3xl p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden ${getSizeClasses(service.size)}`}
+                className={`group rounded-2xl lg:rounded-3xl p-4 sm:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden ${getSizeClasses(service.size)}`}
                 style={{ backgroundColor: service.color }}
               >
                 <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-4 right-4 w-12 h-12 lg:w-16 lg:h-16 border border-white/20 rounded-full" />
-                  <div className="absolute bottom-6 left-4 w-8 h-8 lg:w-12 lg:h-12 border border-white/20 rounded-full" />
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 border border-white/20 rounded-full" />
+                  <div className="absolute bottom-4 left-3 sm:bottom-6 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 border border-white/20 rounded-full" />
                 </div>
                 
-                <div className="h-full flex flex-col justify-between relative z-10 text-white">
-                  <div>
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 bg-white/20">
-                      <IconComponent className="w-6 h-6 text-white" />
+                <div className="h-full flex flex-col justify-between relative z-10 text-white min-h-0">
+                  <div className="flex-1 min-h-0">
+                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl mb-3 sm:mb-4 bg-white/20">
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                     
-                    <h3 className="text-lg lg:text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-sm opacity-90 mb-4 leading-relaxed">{service.description}</p>
+                    <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2 sm:mb-3 leading-tight">{service.title}</h3>
+                    <p className="text-xs sm:text-sm opacity-90 mb-3 sm:mb-4 leading-relaxed line-clamp-3">{service.description}</p>
                     
-                    <ul className="space-y-1 mb-4">
+                    <ul className="space-y-1">
                       {service.features.slice(0, 2).map((feature, idx) => (
                         <li key={idx} className="flex items-center text-xs opacity-80">
-                          <div className="w-1.5 h-1.5 rounded-full mr-2 bg-white/60 flex-shrink-0" />
-                          {feature}
+                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full mr-2 bg-white/60 flex-shrink-0" />
+                          <span className="truncate">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  
-                  
                 </div>
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );
