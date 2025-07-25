@@ -8,6 +8,7 @@ import {
   HiArrowRight,
   HiCheck
 } from 'react-icons/hi';
+import { FaWhatsapp } from "react-icons/fa";
 import { useState } from 'react';
 
 export default function Contact() {
@@ -21,6 +22,8 @@ export default function Contact() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const whatsappNumber = "447739406932"; 
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -29,9 +32,33 @@ export default function Contact() {
     }));
   };
 
+  const formatWhatsAppMessage = () => {
+    const { firstName, lastName, email, phone, subject, message } = formData;
+    
+    return `Hello Grey Falcon Travels!
+
+*Contact Details:*
+Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone}
+
+*Subject:* ${subject}
+
+*Message:*
+${message}
+
+Looking forward to hearing from you!`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
+    
+    const whatsappMessage = formatWhatsAppMessage();
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -99,25 +126,25 @@ export default function Contact() {
               
               <div className="relative z-10">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <HiChatAlt2 className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                    <FaWhatsapp className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800">Send us a Message</h3>
-                    <p className="text-gray-600">We'll get back to you within 24 hours</p>
+                    <h3 className="text-2xl font-bold text-gray-800">Send us a WhatsApp Message</h3>
+                    <p className="text-gray-600">Fill the form and we'll open WhatsApp for you</p>
                   </div>
                 </div>
 
                 {isSubmitted ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <HiCheck className="w-8 h-8 text-green-600" />
+                      <FaWhatsapp className="w-8 h-8 text-green-600" />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-800 mb-2">Message Sent!</h4>
-                    <p className="text-gray-600">Thank you for contacting us. We'll respond within 24 hours.</p>
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">WhatsApp Opened!</h4>
+                    <p className="text-gray-600">Your message has been prepared. Send it to start the conversation!</p>
                   </div>
                 ) : (
-                  <div className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -130,7 +157,7 @@ export default function Contact() {
                           value={formData.firstName}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                           placeholder="Enter your first name"
                         />
                       </div>
@@ -145,7 +172,7 @@ export default function Contact() {
                           value={formData.lastName}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                           placeholder="Enter your last name"
                         />
                       </div>
@@ -163,7 +190,7 @@ export default function Contact() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -178,7 +205,7 @@ export default function Contact() {
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                           placeholder="+265998552002"
                         />
                       </div>
@@ -195,7 +222,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                         placeholder="What can we help you with?"
                       />
                     </div>
@@ -211,19 +238,30 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 resize-none"
                         placeholder="Tell us about your travel plans, preferred destinations, dates, or any specific requirements..."
                       />
                     </div>
 
                     <button
-                      onClick={handleSubmit}
-                      className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 flex items-center justify-center space-x-2 group"
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-green-700 hover:to-emerald-700 transition-all duration-200 flex items-center justify-center space-x-2 group"
                     >
-                      <span>Send Message</span>
+                      <FaWhatsapp className="w-5 h-5" />
+                      <span>Send via WhatsApp</span>
                       <HiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                     </button>
-                  </div>
+
+                    {/* Preview Message */}
+                    {(formData.firstName || formData.lastName || formData.email || formData.phone || formData.subject || formData.message) && (
+                      <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+                        <h4 className="text-sm font-semibold text-green-800 mb-2">WhatsApp Message Preview:</h4>
+                        <div className="text-xs text-green-700 whitespace-pre-line font-mono bg-white p-3 rounded-lg">
+                          {formatWhatsAppMessage()}
+                        </div>
+                      </div>
+                    )}
+                  </form>
                 )}
               </div>
             </div>
