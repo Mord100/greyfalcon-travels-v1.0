@@ -54,7 +54,7 @@ I'm interested in:
 - Discussing my specific requirements
 - Understanding your quality service approach
 
-Looking forward to hearing from your multilingual staff!`;
+Looking forward to hearing from your staff!`;
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -147,7 +147,6 @@ Looking forward to hearing from your multilingual staff!`;
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
-                <p className="text-sm opacity-90">Our multilingual team</p>
                 <h4 className="text-xl font-bold">Excellence in hotel accommodation</h4>
               </div>
             </div>

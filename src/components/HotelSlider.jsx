@@ -30,7 +30,7 @@ const HotelSlider = () => {
       id: 2,
       name: "Anantara Maldives",
       location: "Maldives",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop",
+      image: "https://assets.anantara.com/image/upload/q_auto,f_auto,c_limit,w_1045/media/minor/anantara/images/anantara-dhigu-maldives-resort/the-resort/anantara_dhigu_two_bedroom_family_pool_villa_aerial_984x532.jpg",
       rating: 4.9,
       reviews: 2156,
       price: 850,

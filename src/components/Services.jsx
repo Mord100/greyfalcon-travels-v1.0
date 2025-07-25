@@ -77,7 +77,7 @@ export default function ServicesSection() {
       features: ["Medical coverage", "Trip protection", "Emergency assistance"],
       color: "#22aed8",
       size: "square",
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=400&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1682686578842-00ba49b0a71a?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 
