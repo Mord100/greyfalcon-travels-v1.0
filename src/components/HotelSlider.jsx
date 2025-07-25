@@ -85,9 +85,8 @@ const HotelSlider = () => {
 
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+    <section className="py-8 sm:py-12 lg:py-20 bg-white">
+      <div className="container max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
 
         {/* Slider Container */}
         <div 
@@ -96,7 +95,7 @@ const HotelSlider = () => {
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
           {/* Main Slider */}
-          <div className="overflow-hidden rounded-3xl shadow-2xl">
+          <div className="overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl">
             <div 
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -105,46 +104,60 @@ const HotelSlider = () => {
                 <div key={hotel.id} className="w-full flex-shrink-0">
                   <div className="relative">
                     {/* Hotel Image */}
-                    <div className="relative h-96 md:h-[500px] overflow-hidden">
+                    <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden">
                       <img
                         src={hotel.image}
                         alt={hotel.name}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     </div>
 
                     {/* Hotel Info Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-16 text-white">
-                      <div className="flex items-center mb-2">
-                        <HiLocationMarker className="w-5 h-5 mr-2" />
-                        <span className="text-lg">{hotel.location}</span>
+                    <div className="absolute bottom-0 left-12 right-12 sm:left-16 sm:right-16 md:left-20 md:right-20 p-3 sm:p-6 md:p-8 lg:p-12 xl:p-16 text-white">
+                      <div className="flex items-center mb-1 sm:mb-2">
+                        <HiLocationMarker className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 mr-1 sm:mr-2 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm md:text-base lg:text-lg truncate">{hotel.location}</span>
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-bold mb-3">{hotel.name}</h3>
-                      <p className="text-lg text-white/90 mb-4 max-w-2xl">{hotel.description}</p>
                       
-                      <div className="flex flex-wrap items-center gap-6">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-2 lg:mb-3 leading-tight">
+                        {hotel.name}
+                      </h3>
+                      
+                      <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 mb-2 sm:mb-3 lg:mb-4 max-w-2xl line-clamp-2 sm:line-clamp-3">
+                        {hotel.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-4 lg:gap-6">
                         {/* Rating */}
                         <div className="flex items-center">
-                          <HiStar className="w-5 h-5 text-yellow-400 fill-current mr-1" />
-                          <span className="text-lg font-semibold mr-2">{hotel.rating}</span>
-                          <span className="text-white/80">({hotel.reviews.toLocaleString()} reviews)</span>
+                          <HiStar className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-yellow-400 fill-current mr-1" />
+                          <span className="text-sm sm:text-base lg:text-lg font-semibold mr-1 sm:mr-2">{hotel.rating}</span>
+                          <span className="text-white/80 text-xs sm:text-sm lg:text-base hidden xs:inline">
+                            ({hotel.reviews.toLocaleString()} reviews)
+                          </span>
+                          <span className="text-white/80 text-xs sm:text-sm lg:text-base xs:hidden">
+                            ({hotel.reviews > 1000 ? `${Math.floor(hotel.reviews / 1000)}k` : hotel.reviews})
+                          </span>
                         </div>
-                        
                       </div>
 
                       {/* Amenities */}
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {hotel.amenities.slice(0, 4).map((amenity, idx) => (
+                      <div className="flex flex-wrap gap-1 sm:gap-2 mt-2 sm:mt-3 lg:mt-4">
+                        {hotel.amenities.slice(0, window.innerWidth < 640 ? 2 : 4).map((amenity, idx) => (
                           <span 
                             key={idx}
-                            className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm"
+                            className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm truncate max-w-24 sm:max-w-none"
+                            title={amenity}
                           >
                             {amenity}
                           </span>
                         ))}
+                        {hotel.amenities.length > (window.innerWidth < 640 ? 2 : 4) && (
+                          <span className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm">
+                            +{hotel.amenities.length - (window.innerWidth < 640 ? 2 : 4)}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -156,26 +169,26 @@ const HotelSlider = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-xs rounded-full flex items-center justify-center text-gray-800 hover:scale-110 transition-all duration-200 shadow-lg"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-800 hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg z-10"
           >
-            <HiChevronLeft className="w-6 h-6" />
+            <HiChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 backdrop-blur-xs rounded-full flex items-center justify-center text-gray-800 hover:scale-110 transition-all duration-200 shadow-lg"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-800 hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg z-10"
           >
-            <HiChevronRight className="w-6 h-6" />
+            <HiChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
           </button>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-3">
+          <div className="flex justify-center mt-4 sm:mt-6 lg:mt-8 space-x-2 sm:space-x-3">
             {hotels.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   currentSlide === index 
-                    ? 'w-8' 
+                    ? 'w-4 sm:w-8' 
                     : 'hover:scale-125'
                 }`}
                 style={{ 

@@ -16,14 +16,6 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const services = [
-    { name: 'Leisure Travel', href: '#leisure' },
-    { name: 'Corporate Travel', href: '#corporate' },
-    { name: 'Premium Packages', href: '#premium' },
-    { name: 'Deluxe Packages', href: '#deluxe' },
-    { name: 'Holiday Packages', href: '#holiday' },
-    { name: 'Custom Solutions', href: '#custom' }
-  ];
 
   const destinations = [
     'Dubai', 'London', 'New York', 'Bali', 
@@ -52,14 +44,12 @@ export default function Footer() {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="pt-16 pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-2 text-gray-800">
-                  Grey <span className="text-blue-600">Falcon</span> Travels
-                </h3>
+              <img src="/logo.png" alt="Logo" className="w-40"/>
                 <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
               </div>
               
@@ -106,23 +96,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Services */}
-            <div>
-              <h4 className="text-lg font-bold mb-6 text-gray-800">Our Services</h4>
-              <ul className="space-y-3">
-                {services.map((service, index) => (
-                  <li key={index}>
-                    <a 
-                      href={service.href} 
-                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2 group"
-                    >
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-                      <span>{service.name}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Popular Destinations */}
             <div>
@@ -184,6 +157,7 @@ export default function Footer() {
                 <span>UK Based</span>
                 <span>•</span>
                 <span>Worldwide Service</span>
+                <span>|</span>
                 <span><a className='cursor-pointer hover:text-blue-600' href="https://divdynamicsmw.com" target="_blank" rel="noopener noreferrer">Developed by Div Dynamics</a></span>
               </div>
             </div>

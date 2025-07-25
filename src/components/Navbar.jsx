@@ -7,6 +7,7 @@ import {
   HiMenuAlt3,
   HiX
 } from 'react-icons/hi';
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,12 +71,10 @@ export default function Navbar() {
           {/* Logo */}
           <a href="/">
           <div className="mr-6 flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-900">
-              <HiGlobeAlt className="h-5 w-5 text-white" />
-            </div>
-            <span className="hidden font-bold sm:inline-block text-xl text-slate-900">
+          <img src="/logo.png" alt="Logo" className="w-40"/>
+            {/* <span className="hidden font-bold sm:inline-block text-xl text-slate-900">
               Grey Falcon Travels 
-            </span>
+            </span> */}
           </div>
           </a>
           
@@ -110,7 +109,7 @@ export default function Navbar() {
                 href="#"
                 className="hidden md:inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-900 text-white hover:bg-slate-800 h-10 px-4 py-2 ml-6"
               >
-                WhatsApp
+                <FaWhatsapp size={20} className="mr-2" />WhatsApp
               </a>
             </div>
           </div>
@@ -146,12 +145,7 @@ export default function Navbar() {
           {/* Menu Header */}
           <div className="flex items-center justify-between p-6 border-b">
             <div className="flex items-center space-x-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-900">
-                <HiGlobeAlt className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold text-xl text-slate-900">
-                Grey Falcon Travels 
-              </span>
+              <img src="/logo.png" alt="Logo" className="w-40"/>
             </div>
             <button
               onClick={toggleMenu}
@@ -197,7 +191,7 @@ export default function Navbar() {
               href="#"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 bg-slate-900 text-white hover:bg-slate-800 h-10 px-4 py-2 w-full"
             >
-              WhatsApp
+             <FaWhatsapp size={20} className="mr-2" /> WhatsApp
             </a>
           </div>
         </div>

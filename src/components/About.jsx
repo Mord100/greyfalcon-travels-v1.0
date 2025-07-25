@@ -42,32 +42,32 @@ export default function AboutUs() {
     }
   ];
 
-  const values = [
-    {
-      id: 1,
-      icon: HiHeart,
-      title: "Passion for Travel",
-      description: "We believe travel transforms lives and creates unforgettable memories that last forever.",
-      color: "#22aed8",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop&crop=center" // Placeholder: Image of a smiling traveler interacting with a local person in a culturally rich setting.
-    },
-    {
-      id: 2,
-      icon: HiShieldCheck,
-      title: "Trust & Reliability",
-      description: "Your safety and satisfaction are our top priorities in every journey we plan. We are committed to quality service.",
-      color: "#383E72",
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center" // Placeholder: Image of a handshake between two people against the backdrop of travel-related items.
-    },
-    {
-      id: 3,
-      icon: HiLightBulb,
-      title: "Expertise & Service", // Changed from Innovation to better reflect document content
-      description: "Our multilingual and experienced team is dedicated to providing high-quality, personalized hotel accommodation services.", // Updated description
-      color: "#40c4ec",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop&crop=center" // Placeholder: Image of diverse individuals happily experiencing different aspects of travel.
-    }
-  ];
+//   const values = [
+//     {
+//       id: 1,
+//       icon: HiHeart,
+//       title: "Passion for Travel",
+//       description: "We believe travel transforms lives and creates unforgettable memories that last forever.",
+//       color: "#22aed8",
+//       image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop&crop=center" // Placeholder: Image of a smiling traveler interacting with a local person in a culturally rich setting.
+//     },
+//     {
+//       id: 2,
+//       icon: HiShieldCheck,
+//       title: "Trust & Reliability",
+//       description: "Your safety and satisfaction are our top priorities in every journey we plan. We are committed to quality service.",
+//       color: "#383E72",
+//       image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center" // Placeholder: Image of a handshake between two people against the backdrop of travel-related items.
+//     },
+//     {
+//       id: 3,
+//       icon: HiLightBulb,
+//       title: "Expertise & Service", // Changed from Innovation to better reflect document content
+//       description: "Our multilingual and experienced team is dedicated to providing high-quality, personalized hotel accommodation services.", // Updated description
+//       color: "#40c4ec",
+//       image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop&crop=center" // Placeholder: Image of diverse individuals happily experiencing different aspects of travel.
+//     }
+//   ];
 
   return (
     <section id='about' className="py-12 sm:py-16 lg:py-20 bg-white">
@@ -157,7 +157,7 @@ export default function AboutUs() {
         </div>
 
         {/* Values Section */}
-        <div className="mb-16 lg:mb-20">
+        {/* <div className="mb-16 lg:mb-20">
           <div className="text-center mb-12">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4" style={{ color: '#383E72' }}>
               What Drives Us
@@ -201,7 +201,7 @@ export default function AboutUs() {
               );
             })}
           </div>
-        </div>
+        </div> */}
 
         {/* CTA Section */}
         <div className="text-center">
