@@ -13,7 +13,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  const whatsappNumber = "1234567890"; 
+  const whatsappNumber = "447739406932"; 
   const whatsappMessage = "Hello! I'm interested in your travel services.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
