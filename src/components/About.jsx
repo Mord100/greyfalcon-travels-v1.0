@@ -13,22 +13,20 @@ import { GiLaurelsTrophy } from "react-icons/gi";
 export default function AboutUs() {
   const whatsappNumber = "447739406932";
 
-  const handleLearnMoreClick = () => {
-    const message = `Hello Grey Falcon Travels!
+//   const handleLearnMoreClick = () => {
+//     const message = `Hello Grey Falcon Travels!
 
-I'd like to learn more about your company and services.
+// I'd like to learn more about your company and services.
 
-Could you please provide me with:
-- More details about your hotel accommodation services
-- Information about your competitive rates
-- How your multilingual team can assist me
-- Your future travel agency services
+// Could you please provide me with:
+// - More details about your hotel accommodation services
+// - Information about your competitive rates
 
-Looking forward to connecting with your team!`;
+// Looking forward to connecting with your team!`;
 
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
+//     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+//     window.open(whatsappUrl, '_blank');
+//   };
 
   const handleFindHotelClick = () => {
     const message = `Hello Grey Falcon Travels!
@@ -38,8 +36,6 @@ I'm looking for hotel accommodation and would like to get competitive rates.
 Please help me with:
 - Available hotels for my destination
 - Your best rates and deals
-- Assistance from your multilingual team
-- Any special packages or offers
 
 Thank you for your service!`;
 
@@ -118,7 +114,7 @@ Looking forward to hearing from your multilingual staff!`;
                 Our future plans include becoming a fully fledged travel agency for air fares, hotels, tours and excursions, visas, insurance and cheap vacations all year round.
               </p>
               
-              <button 
+              {/* <button 
                 onClick={handleLearnMoreClick}
                 className="group flex items-center text-sm lg:text-base font-medium transition-all duration-200 hover:gap-2 bg-green-50 hover:bg-green-100 px-4 py-2 rounded-lg border border-green-200"
                 style={{ color: '#22aed8' }}
@@ -126,7 +122,7 @@ Looking forward to hearing from your multilingual staff!`;
                 <FaWhatsapp className="w-4 h-4 mr-2 text-green-600" />
                 Learn More About Us
                 <HiArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+              </button> */}
             </div>
 
             {/* Mission Statement */}
@@ -207,7 +203,6 @@ Looking forward to hearing from your multilingual staff!`;
                   className="px-8 py-4 rounded-2xl text-white font-semibold text-lg hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
                   style={{ backgroundColor: '#22aed8' }}
                 >
-                  <FaWhatsapp className="w-5 h-5" />
                   <span>Find Your Hotel</span>
                 </button>
                 <button 
@@ -218,16 +213,10 @@ Looking forward to hearing from your multilingual staff!`;
                     borderColor: '#383E72'
                   }}
                 >
-                  <FaWhatsapp className="w-5 h-5 text-green-600" />
                   <span>Contact Our Team</span>
                 </button>
               </div>
 
-              {/* WhatsApp CTA */}
-              <div className="mt-6 inline-flex items-center space-x-2 text-sm text-gray-600 bg-green-50 px-4 py-2 rounded-full border border-green-200">
-                <FaWhatsapp className="w-4 h-4 text-green-600" />
-                <span>Get instant responses from our multilingual team</span>
-              </div>
             </div>
           </div>
         </div>

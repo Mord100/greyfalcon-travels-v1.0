@@ -67,7 +67,6 @@ Looking forward to your recommendations!`;
             <div className="lg:col-span-1">
               <div className="mb-6">
               <img src="/logo.png" alt="Logo" className="w-40"/>
-                <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
               </div>
               
               <p className="text-gray-600 mb-6 leading-relaxed">
