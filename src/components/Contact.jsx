@@ -112,7 +112,7 @@ Looking forward to hearing from you!`;
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-            Get in <span className="text-blue-600">Touch</span>
+            Get in <span className="text-[#22aed8']">Touch</span>
           </h2>
         </div>
 

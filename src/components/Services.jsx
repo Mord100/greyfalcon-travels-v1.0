@@ -104,7 +104,7 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-            OUR <span className="text-blue-600">Services</span>
+            OUR <span className="text-[#22aed8]">Services</span>
           </h2>
         </div>
 
