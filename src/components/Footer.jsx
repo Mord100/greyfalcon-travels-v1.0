@@ -12,10 +12,27 @@ import {
 } from 'react-icons/hi';
 
 export default function Footer() {
+  const whatsappNumber = "447739406932"; 
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleDestinationClick = (destination) => {
+    const message = `Hello Grey Falcon Travels!
+
+I'm interested in booking accommodation in *${destination}*.
+
+Could you please provide me with:
+- Available hotels and rates
+- Best deals for my travel dates
+- Any special packages or offers
+
+Looking forward to your recommendations!`;
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   const destinations = [
     'Dubai', 'London', 'New York', 'Bali', 
@@ -96,18 +113,34 @@ export default function Footer() {
               </div>
             </div>
 
-
             {/* Popular Destinations */}
             <div>
               <h4 className="text-lg font-bold mb-6 text-gray-800">Popular Destinations</h4>
+              <p className="text-xs text-gray-500 mb-4">Click any destination to get hotel recommendations via WhatsApp</p>
               <div className="grid grid-cols-2 gap-2">
                 {destinations.map((destination, index) => (
-                  <div key={index} className="group cursor-pointer">
-                    <span className="text-gray-600 hover:text-cyan-600 transition-colors duration-200 text-sm">
+                  <button
+                    key={index}
+                    onClick={() => handleDestinationClick(destination)}
+                    className="group cursor-pointer text-left p-2 rounded-lg hover:bg-green-50 hover:border-green-200 border border-transparent transition-all duration-200"
+                  >
+                    <span className="text-gray-600 group-hover:text-green-600 transition-colors duration-200 text-sm font-medium">
                       {destination}
                     </span>
-                  </div>
+                    <div className="w-0 group-hover:w-4 h-0.5 bg-green-500 transition-all duration-200 mt-1"></div>
+                  </button>
                 ))}
+              </div>
+              
+              {/* WhatsApp CTA for destinations */}
+              <div className="mt-6 p-3 bg-green-50 border border-green-200 rounded-lg">
+                <div className="flex items-center space-x-2 text-green-700">
+                  <HiChatAlt2 className="w-4 h-4" />
+                  <span className="text-xs font-medium">Instant WhatsApp Quotes</span>
+                </div>
+                <p className="text-xs text-green-600 mt-1">
+                  Get personalized hotel recommendations and rates instantly
+                </p>
               </div>
             </div>
 
