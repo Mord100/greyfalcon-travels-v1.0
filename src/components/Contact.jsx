@@ -126,8 +126,6 @@ Looking forward to hearing from you!`;
               
               <div className="relative z-10">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                  </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-800">Send us a WhatsApp Message</h3>
                   </div>

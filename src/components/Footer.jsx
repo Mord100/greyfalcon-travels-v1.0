@@ -130,17 +130,6 @@ Looking forward to your recommendations!`;
                   </button>
                 ))}
               </div>
-              
-              {/* WhatsApp CTA for destinations */}
-              <div className="mt-6 p-3 bg-green-50 border border-green-200 rounded-lg">
-                <div className="flex items-center space-x-2 text-green-700">
-                  <HiChatAlt2 className="w-4 h-4" />
-                  <span className="text-xs font-medium">Instant WhatsApp Quotes</span>
-                </div>
-                <p className="text-xs text-green-600 mt-1">
-                  Get personalized hotel recommendations and rates instantly
-                </p>
-              </div>
             </div>
 
             {/* Quick Links */}
