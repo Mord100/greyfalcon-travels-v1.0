@@ -61,56 +61,8 @@ Looking forward to your recommendations!`;
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="pt-16 pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
             
-            {/* Company Info */}
-            <div className="lg:col-span-1">
-              <div className="mb-6">
-              <img src="/logo.png" alt="Logo" className="w-40"/>
-              </div>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Your go-to agency for hotel accommodations worldwide. Established in 2020, 
-                we specialize in competitive rates with our multilingual and experienced team.
-              </p>
-
-              {/* Contact Info */}
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 group">
-                  {/* <div className="w-10 h-10 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition-colors duration-200">
-                    <HiMail className="w-5 h-5 text-blue-600" />
-                  </div> */}
-                  <div>
-                    <p className="text-sm text-gray-500">Email</p>
-                    <a href="mailto:sales@greyfalcontravels.com" className="text-gray-800 hover:text-blue-600 transition-colors duration-200">
-                      sales@greyfalcontravels.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-3 group">
-                  <div className="w-10 h-10 bg-green-50 border border-green-200 rounded-lg flex items-center justify-center group-hover:bg-green-100 transition-colors duration-200">
-                    <HiPhone className="w-5 h-5 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Phone</p>
-                    <a href="tel:+447739406932" className="text-gray-800 hover:text-green-600 transition-colors duration-200">
-                      +44 7739 406932
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-3 group">
-                  <div className="w-10 h-10 bg-purple-50 border border-purple-200 rounded-lg flex items-center justify-center group-hover:bg-purple-100 transition-colors duration-200">
-                    <HiLocationMarker className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Location</p>
-                    <p className="text-gray-800">United Kingdom</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             {/* Popular Destinations */}
             <div>

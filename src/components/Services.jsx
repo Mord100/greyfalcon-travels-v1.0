@@ -3,7 +3,6 @@ import {
   HiHome, 
   HiCamera,
   HiCreditCard,
-  HiShieldCheck,
   HiChatAlt2,
   HiArrowRight
 } from 'react-icons/hi';
@@ -18,7 +17,7 @@ export default function ServicesSection() {
       features: ["Flexible itineraries", "Family-friendly options", "Romantic getaways"],
       color: "#22aed8",
       size: "hero",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop&crop=center"
+      image: "https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg?_gl=1*c2x53a*_ga*MTg5MDY2MjY3Ni4xNzUzNjEwNjEw*_ga_8JE65Q40S6*czE3NTM2MTA2MDkkbzEkZzEkdDE3NTM2MTE2NzUkajQ3JGwwJGgw"
     },
     {
       id: 2,
@@ -28,56 +27,26 @@ export default function ServicesSection() {
       features: ["Business class options", "Meeting coordination", "Expense management"],
       color: "#40c4ec",
       size: "tall",
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=600&fit=crop&crop=center"
+      image: "https://images.pexels.com/photos/19382111/pexels-photo-19382111.jpeg?_gl=1*pdp5d3*_ga*MTg5MDY2MjY3Ni4xNzUzNjEwNjEw*_ga_8JE65Q40S6*czE3NTM2MTA2MDkkbzEkZzEkdDE3NTM2MTE0OTkkajE0JGwwJGgw"
     },
     {
       id: 3,
-      icon: HiShieldCheck,
-      title: "Premium Packages",
-      description: "Enhanced travel experiences with premium accommodations, priority services, and exclusive perks.",
-      features: ["4-5 star hotels", "Priority booking", "Concierge service"],
-      color: "#383E72",
-      size: "square",
-      image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=400&fit=crop&crop=center"
-    },
-    {
-      id: 4,
       icon: HiCamera,
       title: "Holiday Packages",
       description: "Special seasonal getaways and celebration trips designed to make your holidays unforgettable.",
       features: ["Seasonal destinations", "Festival experiences", "Group discounts"],
       color: "#40c4ec",
       size: "wide",
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=300&fit=crop&crop=center"
+      image: "https://images.pexels.com/photos/1879392/pexels-photo-1879392.jpeg?_gl=1*1066m73*_ga*MTg5MDY2MjY3Ni4xNzUzNjEwNjEw*_ga_8JE65Q40S6*czE3NTM2MTA2MDkkbzEkZzEkdDE3NTM2MTIwNTIkajIkbDAkaDA."
     },
     {
-      id: 5,
-      icon: HiHome,
-      title: "Deluxe Packages",
-      description: "The ultimate in luxury travel with world-class accommodations and personalized service throughout.",
-      features: ["Luxury resorts", "Private transfers", "Personal travel advisor"],
-      color: "#22aed8",
-      size: "square",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=400&fit=crop&crop=center"
-    },
-    {
-      id: 6,
+      id: 4,
       icon: HiChatAlt2,
       title: "Custom Solutions",
       description: "Tailored travel experiences designed specifically for your unique needs and preferences.",
       features: ["Bespoke planning", "Special requirements", "24/7 support"],
       color: "#383E72",
       size: "contact"
-    },
-    {
-      id: 7,
-      icon: HiShieldCheck,
-      title: "Travel Insurance",
-      description: "Comprehensive coverage and peace of mind for all your travel adventures worldwide.",
-      features: ["Medical coverage", "Trip protection", "Emergency assistance"],
-      color: "#22aed8",
-      size: "square",
-      image: "https://images.unsplash.com/photo-1682686578842-00ba49b0a71a?q=80&w=1075&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 
@@ -89,8 +58,6 @@ export default function ServicesSection() {
         return 'col-span-1 row-span-1 sm:row-span-2';
       case 'wide':
         return 'col-span-1 sm:col-span-2 row-span-1';
-      case 'square':
-        return 'col-span-1 row-span-1';
       case 'contact':
         return 'col-span-1 row-span-1';
       default:
@@ -108,12 +75,12 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* Improved Bento Grid */}
+        {/* Improved Bento Grid - Adjusted for 4 services */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] sm:auto-rows-[220px] lg:auto-rows-[240px] gap-4 sm:gap-6 mb-12 lg:mb-16">
           {services.map((service) => {
             const IconComponent = service.icon;
             
-            // Hero card (Leisure Travel) - Improved responsive text
+            // Hero card (Leisure Travel) - Resort hotel image
             if (service.size === 'hero') {
               return (
                 <div 
@@ -156,7 +123,7 @@ export default function ServicesSection() {
               );
             }
 
-            // Tall card (Corporate Travel) - Improved responsive text
+            // Tall card (Corporate Travel) - Canary Wharf London image
             if (service.size === 'tall') {
               return (
                 <div 
@@ -192,34 +159,7 @@ export default function ServicesSection() {
               );
             }
 
-            // Square cards (Premium & Deluxe) - Improved responsive text
-            if (service.size === 'square') {
-              return (
-                <div 
-                  key={service.id}
-                  className={`group bg-white rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden ${getSizeClasses(service.size)}`}
-                >
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${service.image})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"/>
-                  
-                  <div className="h-full flex flex-col justify-end p-4 sm:p-5 lg:p-6 text-white relative z-10">
-                    <div 
-                      className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl mb-2 sm:mb-3 bg-white/20 backdrop-blur-sm"
-                    >
-                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                    </div>
-                    
-                    <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2 leading-tight">{service.title}</h3>
-                    <p className="text-xs opacity-90 leading-relaxed line-clamp-2">{service.description}</p>
-                  </div>
-                </div>
-              );
-            }
-
-            // Wide card (Holiday Packages) - Improved responsive text
+            // Wide card (Holiday Packages) - Antalya resort hotel image
             if (service.size === 'wide') {
               return (
                 <div 
@@ -261,7 +201,7 @@ export default function ServicesSection() {
               );
             }
 
-            // Contact card (Custom Solutions) - Improved responsive text
+            // Contact card (Custom Solutions)
             return (
               <div 
                 key={service.id}

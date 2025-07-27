@@ -18,51 +18,56 @@ const HotelSlider = () => {
       id: 1,
       name: "Jumeirah Beach Hotel",
       location: "Dubai, UAE",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=500&fit=crop",
+      // Updated image link for Jumeirah Beach Hotel
+      image: "https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/hotels/dubai/jumeirah-beach-hotel/new-website-content/hotel-home-page/hotel-gallery/jbh_jumeirah-beach-hotel_gallery_image-5.jpg?h=1280&w=1920&revision=26bbce74-d307-4a60-b40b-43acf6252f30", 
       rating: 4.8,
       reviews: 3247,
       price: 450,
-      description: "Iconic wave-shaped luxury resort offering stunning Arabian Gulf views and world-class amenities.",
-      amenities: ["Private Beach", "Multiple Pools", "Spa", "Fine Dining"],
+      description: "26-storey wave-shaped luxury resort with 598 rooms offering panoramic Arabian Gulf views and world-class amenities.",
+      amenities: ["Private Beach", "Wild Wadi Waterpark", "19 Restaurants", "Spa & Wellness"],
       badge: "Luxury"
     },
     {
       id: 2,
-      name: "Anantara Maldives",
-      location: "Maldives",
-      image: "https://assets.anantara.com/image/upload/q_auto,f_auto,c_limit,w_1045/media/minor/anantara/images/anantara-dhigu-maldives-resort/the-resort/anantara_dhigu_two_bedroom_family_pool_villa_aerial_984x532.jpg",
-      rating: 4.9,
-      reviews: 2156,
-      price: 850,
-      description: "Overwater villas in pristine turquoise waters with unparalleled luxury and privacy.",
-      amenities: ["Overwater Villas", "Private Butler", "Diving Center", "Spa"],
-      badge: "Paradise"
-    },
-    {
-      id: 3,
-      name: "Titanic Hotel Antalya",
-      location: "Antalya, Turkey",
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=500&fit=crop",
+      name: "Titanic Deluxe Golf Belek",
+      location: "Belek, Antalya, Turkey",
+      // Updated image link for Titanic Deluxe Golf Belek
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/22/a2/c7/titanic-deluxe-belek.jpg?w=1400&h=-1&s=1", 
       rating: 4.6,
       reviews: 4892,
       price: 180,
-      description: "All-inclusive Mediterranean resort with extensive facilities and entertainment options.",
-      amenities: ["All-Inclusive", "Water Park", "Kids Club", "Beach Access"],
-      badge: "Family Friendly"
+      description: "5-star all-inclusive resort featuring 36-hole golf course, seven outdoor pools, and one of the region's largest spas.",
+      amenities: ["All-Inclusive Plus", "36-Hole Golf Course", "7 Outdoor Pools", "Private Beach"],
+      badge: "Golf Resort"
     },
     {
-      id: 4,
+      id: 3,
       name: "Zamzam Clock Tower",
       location: "Makkah, Saudi Arabia",
-      image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&h=500&fit=crop",
+      // Updated image link for Zamzam Clock Tower
+      image: "https://lh3.googleusercontent.com/p/AF1QipOgBGT8hSRlJoL91OhhK9L3Ujt-zwRasGj5TLvh=s1360-w1360-h1020-rw", 
       rating: 4.7,
       reviews: 5634,
       price: 320,
       description: "Premium accommodation steps away from the Holy Mosque with spiritual comfort and luxury.",
       amenities: ["Holy Mosque View", "Prayer Facilities", "Halal Dining", "Concierge"],
       badge: "Spiritual"
+    },
+    {
+      id: 4,
+      name: "Anantara Maldives",
+      location: "Maldives",
+      // Updated image link for Anantara Maldives
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/a2/3f/ff/anantara-dhigu-maldives.jpg?w=1400&h=-1&s=1", 
+      rating: 4.9,
+      reviews: 2156,
+      price: 850,
+      description: "Overwater villas in pristine turquoise waters with unparalleled luxury and privacy.",
+      amenities: ["Overwater Villas", "Private Butler", "Diving Center", "Spa"],
+      badge: "Paradise"
     }
   ];
+  
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % hotels.length);
@@ -85,12 +90,12 @@ const HotelSlider = () => {
 
 
   return (
-    <section className="py-8 sm:py-12 lg:py-20 bg-white">
-      <div className="container max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+    <section className="">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
 
         {/* Slider Container */}
         <div 
-          className="relative max-w-7xl mx-auto"
+          className="relative"
           onMouseEnter={() => setIsAutoPlaying(false)}
           onMouseLeave={() => setIsAutoPlaying(true)}
         >

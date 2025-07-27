@@ -89,22 +89,9 @@ Looking forward to hearing from you!`;
       contact: "+44 7739 406932",
       href: "tel:+447739406932",
       color: "green"
-    },
-    {
-      icon: HiLocationMarker,
-      title: "Visit Us",
-      subtitle: "UK-based travel specialists",
-      contact: "United Kingdom",
-      href: "#",
-      color: "purple"
     }
   ];
 
-  const workingHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM GMT" },
-    { day: "Saturday", hours: "10:00 AM - 4:00 PM GMT" },
-    { day: "Sunday", hours: "Closed" }
-  ];
 
   return (
     <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-white">
@@ -299,23 +286,6 @@ Looking forward to hearing from you!`;
               })}
             </div>
 
-            {/* Working Hours */}
-            <div className="bg-white rounded-2xl lg:pb-27 shadow-lg p-6 border border-gray-100">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-orange-50 border border-orange-200 rounded-xl flex items-center justify-center">
-                  <HiClock className="w-5 h-5 text-orange-600" />
-                </div>
-                <h4 className="font-bold text-gray-800">Working Hours</h4>
-              </div>
-              <div className="space-y-3">
-                {workingHours.map((schedule, index) => (
-                  <div key={index} className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">{schedule.day}</span>
-                    <span className="text-sm font-medium text-gray-800">{schedule.hours}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
 
  
           </div>

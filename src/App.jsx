@@ -15,7 +15,6 @@ const HomePage = () => {
   return (
     <>
       <Hero/>
-      <HotelSlider/>
       <AboutUs/>
       <ServicesSection/>
       <Contact/>

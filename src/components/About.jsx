@@ -13,21 +13,6 @@ import { GiLaurelsTrophy } from "react-icons/gi";
 export default function AboutUs() {
   const whatsappNumber = "447739406932";
 
-//   const handleLearnMoreClick = () => {
-//     const message = `Hello Grey Falcon Travels!
-
-// I'd like to learn more about your company and services.
-
-// Could you please provide me with:
-// - More details about your hotel accommodation services
-// - Information about your competitive rates
-
-// Looking forward to connecting with your team!`;
-
-//     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-//     window.open(whatsappUrl, '_blank');
-//   };
-
   const handleFindHotelClick = () => {
     const message = `Hello Grey Falcon Travels!
 
@@ -60,34 +45,58 @@ Looking forward to hearing from your staff!`;
     window.open(whatsappUrl, '_blank');
   };
 
-  const stats = [
+  // const stats = [
+  //   {
+  //     id: 2,
+  //     number: "9+",
+  //     label: "Featured Destinations",
+  //     icon: HiGlobeAlt,
+  //     color: "#40c4ec"
+  //   },
+  //   {
+  //     id: 3,
+  //     number: "4+",
+  //     label: "Years in Business",
+  //     icon: GiLaurelsTrophy,
+  //     color: "#383E72"
+  //   },
+  //   {
+  //     id: 4,
+  //     number: "Quality",
+  //     label: "Service Commitment", 
+  //     icon: HiStar,
+  //     color: "#22aed8"
+  //   }
+  // ];
+
+  const hotelImages = [
     {
-      id: 1,
-      number: "Thousands",
-      label: "Happy Clients",
-      icon: HiUsers,
-      color: "#22aed8"
+      src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=400&auto=format&fit=crop",
+      alt: "Luxury hotel lobby"
     },
     {
-      id: 2,
-      number: "9+",
-      label: "Featured Destinations",
-      icon: HiGlobeAlt,
-      color: "#40c4ec"
+      src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=400&auto=format&fit=crop",
+      alt: "Modern hotel room"
     },
     {
-      id: 3,
-      number: "4+",
-      label: "Years in Business",
-      icon: GiLaurelsTrophy,
-      color: "#383E72"
+      src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=400&auto=format&fit=crop",
+      alt: "Hotel exterior"
     },
     {
-      id: 4,
-      number: "Quality",
-      label: "Service Commitment", 
-      icon: HiStar,
-      color: "#22aed8"
+      src: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=400&auto=format&fit=crop",
+      alt: "Resort pool area"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=400&auto=format&fit=crop",
+      alt: "Hotel restaurant"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=400&auto=format&fit=crop",
+      alt: "Hotel suite"
+    },
+    {
+      src: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?_gl=1*7x44jt*_ga*MTg5MDY2MjY3Ni4xNzUzNjEwNjEw*_ga_8JE65Q40S6*czE3NTM2MTA2MDkkbzEkZzEkdDE3NTM2MTEwMjUkajQxJGwwJGgw",
+      alt: "Hotel suite"
     }
   ];
 
@@ -113,72 +122,67 @@ Looking forward to hearing from your staff!`;
               <p className="text-gray-600 leading-relaxed mb-6">
                 Our future plans include becoming a fully fledged travel agency for air fares, hotels, tours and excursions, visas, insurance and cheap vacations all year round.
               </p>
-              
-              {/* <button 
-                onClick={handleLearnMoreClick}
-                className="group flex items-center text-sm lg:text-base font-medium transition-all duration-200 hover:gap-2 bg-green-50 hover:bg-green-100 px-4 py-2 rounded-lg border border-green-200"
-                style={{ color: '#22aed8' }}
-              >
-                <FaWhatsapp className="w-4 h-4 mr-2 text-green-600" />
-                Learn More About Us
-                <HiArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-              </button> */}
             </div>
 
-            {/* Mission Statement */}
-            <div className="bg-gradient-to-r from-blue-50 to-gray-50 lg:py-18.5 rounded-3xl p-6 lg:p-8 border border-gray-100">
-              <h3 className="text-xl lg:text-2xl font-bold mb-3" style={{ color: '#383E72' }}>
-                Our Mission
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                "To be the go-to agency for hotel accommodation worldwide, providing quality service and competitive rates, with plans to expand into a comprehensive travel service offering air fares, tours, excursions, visas, insurance and vacation packages."
-              </p>
-            </div>
           </div>
 
           {/* Image & Stats */}
           <div className="space-y-6">
-            {/* Hero Image */}
+            {/* Hotel Images Grid */}
             <div className="relative rounded-3xl overflow-hidden shadow-lg group">
-              <img
-                src="https://images.unsplash.com/photo-1517999349371-c43520457b23?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Our multilingual and experienced team"
-                className="w-full h-64 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="grid grid-cols-3 grid-rows-2 gap-1 h-64 lg:h-126">
+                {hotelImages.map((image, index) => (
+                  <div 
+                    key={index}
+                    className={`relative overflow-hidden ${
+                      index === 0 ? 'col-span-2' : 
+                      index === 3 ? 'col-span-2' : 
+                      'col-span-1'
+                    }`}
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
                 <h4 className="text-xl font-bold">Excellence in hotel accommodation</h4>
               </div>
             </div>
 
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Stats Grid - Now 3 columns */}
+            {/* <div className="grid grid-cols-3 gap-3">
               {stats.map((stat) => { 
                 const IconComponent = stat.icon;
                 return (
                   <div 
                     key={stat.id}
-                    className="bg-white rounded-2xl lg:rounded-3xl p-4 lg:p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl lg:rounded-3xl p-3 lg:p-4 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
                   >
                     <div 
-                      className="inline-flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-xl lg:rounded-2xl mb-3 group-hover:scale-110 transition-transform duration-300"
+                      className="inline-flex items-center justify-center w-8 h-8 lg:w-10 lg:h-10 rounded-xl lg:rounded-2xl mb-2 group-hover:scale-110 transition-transform duration-300"
                       style={{ backgroundColor: `${stat.color}15` }}
                     >
                       <IconComponent 
-                        className="w-5 h-5 lg:w-6 lg:h-6"
+                        className="w-4 h-4 lg:w-5 lg:h-5"
                         style={{ color: stat.color }}
                       />
                     </div>
-                    <div className="text-2xl lg:text-3xl font-bold mb-1" style={{ color: '#383E72' }}>
+                    <div className="text-lg lg:text-2xl font-bold mb-1" style={{ color: '#383E72' }}>
                       {stat.number}
                     </div>
-                    <div className="text-sm lg:text-base text-gray-600">
+                    <div className="text-xs lg:text-sm text-gray-600">
                       {stat.label}
                     </div>
                   </div>
                 );
               })}
-            </div>
+            </div> */}
           </div>
         </div>
 
