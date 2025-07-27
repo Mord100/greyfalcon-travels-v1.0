@@ -128,42 +128,6 @@ const HotelSlider = () => {
                       <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-2 lg:mb-3 leading-tight">
                         {hotel.name}
                       </h3>
-                      
-                      <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 mb-2 sm:mb-3 lg:mb-4 max-w-2xl line-clamp-2 sm:line-clamp-3">
-                        {hotel.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap items-center gap-2 sm:gap-4 lg:gap-6">
-                        {/* Rating */}
-                        <div className="flex items-center">
-                          <HiStar className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-yellow-400 fill-current mr-1" />
-                          <span className="text-sm sm:text-base lg:text-lg font-semibold mr-1 sm:mr-2">{hotel.rating}</span>
-                          <span className="text-white/80 text-xs sm:text-sm lg:text-base hidden xs:inline">
-                            ({hotel.reviews.toLocaleString()} reviews)
-                          </span>
-                          <span className="text-white/80 text-xs sm:text-sm lg:text-base xs:hidden">
-                            ({hotel.reviews > 1000 ? `${Math.floor(hotel.reviews / 1000)}k` : hotel.reviews})
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Amenities */}
-                      <div className="flex flex-wrap gap-1 sm:gap-2 mt-2 sm:mt-3 lg:mt-4">
-                        {hotel.amenities.slice(0, window.innerWidth < 640 ? 2 : 4).map((amenity, idx) => (
-                          <span 
-                            key={idx}
-                            className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm truncate max-w-24 sm:max-w-none"
-                            title={amenity}
-                          >
-                            {amenity}
-                          </span>
-                        ))}
-                        {hotel.amenities.length > (window.innerWidth < 640 ? 2 : 4) && (
-                          <span className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm">
-                            +{hotel.amenities.length - (window.innerWidth < 640 ? 2 : 4)}
-                          </span>
-                        )}
-                      </div>
                     </div>
                   </div>
                 </div>

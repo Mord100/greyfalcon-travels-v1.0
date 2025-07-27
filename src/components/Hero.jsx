@@ -115,7 +115,7 @@ export default function HeroSection() {
       <div className="relative z-10 container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         {/* Hero Text */}
         <HotelSlider/>
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center my-4 lg:my-8">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="text-white drop-shadow-lg">Discover Your</span>
             <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent drop-shadow-lg">
