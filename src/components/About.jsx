@@ -198,7 +198,7 @@ Looking forward to hearing from your staff!`;
                 Ready to Plan Your Hotel Stay?
               </h3>
               <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Join thousands of happy clients who have trusted us to find competitive rates for hotel accommodation worldwide.
+                Join hundreds of happy clients who have trusted us to find competitive rates for hotel accommodation worldwide.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button 

@@ -189,7 +189,7 @@ Looking forward to hearing from you!`;
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                          placeholder="+265998552002"
+                          // placeholder="+265998552002"
                         />
                       </div>
                     </div>

@@ -19,9 +19,9 @@ const HotelSlider = () => {
       name: "Jumeirah Beach Hotel",
       location: "Dubai, UAE",
       // Updated image link for Jumeirah Beach Hotel
-      image: "https://cdn.jumeirah.com/-/mediadh/dh/hospitality/jumeirah/hotels/dubai/jumeirah-beach-hotel/new-website-content/hotel-home-page/hotel-gallery/jbh_jumeirah-beach-hotel_gallery_image-5.jpg?h=1280&w=1920&revision=26bbce74-d307-4a60-b40b-43acf6252f30", 
+      image: "https://www.lemispa.com/wp-content/uploads/2022/11/132968_Jumeirah-Beach-Hotel-Travelinum.jpg", 
       rating: 4.8,
-      reviews: 3247,
+
       price: 450,
       description: "26-storey wave-shaped luxury resort with 598 rooms offering panoramic Arabian Gulf views and world-class amenities.",
       amenities: ["Private Beach", "Wild Wadi Waterpark", "19 Restaurants", "Spa & Wellness"],

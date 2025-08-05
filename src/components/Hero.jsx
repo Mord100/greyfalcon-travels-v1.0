@@ -154,11 +154,11 @@ export default function HeroSection() {
                   <p className="text-gray-500 mb-3">
                     {destinations[0].country}
                   </p>
-                  <div className="flex items-center text-sm text-gray-400">
+                  {/* <div className="flex items-center text-sm text-gray-400">
                     <span>
                       {destinations[0].reviews.toLocaleString()} reviews
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -181,11 +181,11 @@ export default function HeroSection() {
                   <p className="text-gray-500 text-sm mb-2">
                     {destinations[1].country}
                   </p>
-                  <div className="flex items-center text-xs text-gray-400">
+                  {/* <div className="flex items-center text-xs text-gray-400">
                     <span>
                       {destinations[1].reviews.toLocaleString()} reviews
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -205,11 +205,11 @@ export default function HeroSection() {
                   <p className="text-gray-500 text-sm mb-2">
                     {destinations[2].country}
                   </p>
-                  <div className="flex items-center text-xs text-gray-400">
+                  {/* <div className="flex items-center text-xs text-gray-400">
                     <span>
                       {destinations[2].reviews.toLocaleString()} reviews
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -232,11 +232,11 @@ export default function HeroSection() {
                   <p className="text-gray-500 mb-3">
                     {destinations[3].country}
                   </p>
-                  <div className="flex items-center text-sm text-gray-400">
+                  {/* <div className="flex items-center text-sm text-gray-400">
                     <span>
                       {destinations[3].reviews.toLocaleString()} reviews
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -259,11 +259,11 @@ export default function HeroSection() {
                   <p className="text-gray-500 text-sm mb-2">
                     {destinations[4].country}
                   </p>
-                  <div className="flex items-center text-xs text-gray-400">
+                  {/* <div className="flex items-center text-xs text-gray-400">
                     <span>
                       {destinations[4].reviews.toLocaleString()} reviews
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -283,11 +283,11 @@ export default function HeroSection() {
                   <p className="text-gray-500 text-sm mb-2">
                     {destinations[5].country}
                   </p>
-                  <div className="flex items-center text-xs text-gray-400">
+                  {/* <div className="flex items-center text-xs text-gray-400">
                     <span>
                       {destinations[5].reviews.toLocaleString()} reviews
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
