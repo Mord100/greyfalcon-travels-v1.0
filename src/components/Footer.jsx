@@ -49,13 +49,13 @@ Looking forward to your recommendations!`;
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-50 via-white to-gray-50 text-gray-800 relative overflow-hidden border-t border-gray-200">
+    <footer className="bg-white text-gray-800 relative overflow-hidden border-t border-gray-200">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 border border-blue-200 rounded-full"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 border border-cyan-200 rounded-full"></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 border border-blue-200 rounded-full"></div>
-        <div className="absolute bottom-32 right-1/3 w-20 h-20 border border-cyan-200 rounded-full"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 border border-[#22aed8] rounded-full"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 border border-[#22aed8] rounded-full"></div>
+        <div className="absolute bottom-20 left-1/4 w-16 h-16 border border-[#22aed8] rounded-full"></div>
+        <div className="absolute bottom-32 right-1/3 w-20 h-20 border border-[#22aed8] rounded-full"></div>
       </div>
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -73,12 +73,12 @@ Looking forward to your recommendations!`;
                   <button
                     key={index}
                     onClick={() => handleDestinationClick(destination)}
-                    className="group cursor-pointer text-left p-2 rounded-lg hover:bg-green-50 hover:border-green-200 border border-transparent transition-all duration-200"
+                    className="group cursor-pointer text-left p-2 rounded-lg hover:bg-[#22aed8]/10 hover:border-[#22aed8]/20 border border-transparent transition-all duration-200"
                   >
-                    <span className="text-gray-600 group-hover:text-green-600 transition-colors duration-200 text-sm font-medium">
+                    <span className="text-gray-600 group-hover:text-[#22aed8] transition-colors duration-200 text-sm font-medium">
                       {destination}
                     </span>
-                    <div className="w-0 group-hover:w-4 h-0.5 bg-green-500 transition-all duration-200 mt-1"></div>
+                    <div className="w-0 group-hover:w-4 h-0.5 bg-[#22aed8] transition-all duration-200 mt-1"></div>
                   </button>
                 ))}
               </div>
@@ -92,9 +92,9 @@ Looking forward to your recommendations!`;
                   <li key={index}>
                     <a 
                       href={link.href} 
-                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center space-x-2 group"
+                      className="text-gray-600 hover:text-[#22aed8] transition-colors duration-200 flex items-center space-x-2 group"
                     >
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                      <div className="w-1.5 h-1.5 bg-[#22aed8] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
                       <span>{link.name}</span>
                     </a>
                   </li>
@@ -102,12 +102,12 @@ Looking forward to your recommendations!`;
               </ul>
 
               {/* CTA Section */}
-              <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200">
-                <h5 className="font-semibold mb-2 text-blue-700">Ready to Travel?</h5>
+              <div className="mt-8 p-4 bg-[#22aed8]/10 rounded-xl border border-[#22aed8]/20">
+                <h5 className="font-semibold mb-2 text-[#22aed8]">Ready to Travel?</h5>
                 <p className="text-sm text-gray-600 mb-3">Get competitive hotel rates worldwide</p>
                 <a 
                   href="#contact" 
-                  className="inline-flex items-center space-x-2 text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                  className="inline-flex items-center space-x-2 text-sm bg-[#22aed8] hover:bg-[#1e9db5] text-white px-4 py-2 rounded-lg transition-colors duration-200"
                 >
                   <span>Get Quote</span>
                   <HiArrowUp className="w-4 h-4 rotate-45" />
@@ -118,11 +118,11 @@ Looking forward to your recommendations!`;
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-300 pt-8 pb-6">
+        <div className="border-t border-gray-200 pt-8 pb-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               <p className="text-gray-500 text-sm">
-                © 2025 Grey Falcon Travels LTD. All rights reserved.
+                2025 Grey Falcon Travels LTD. All rights reserved.
               </p>
               <div className="flex items-center space-x-4 text-xs text-gray-400">
                 <span>Est. 2020</span>

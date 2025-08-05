@@ -88,7 +88,7 @@ Looking forward to hearing from you!`;
       subtitle: "Speak with our travel experts",
       contact: "+44 7739 406932",
       href: "tel:+447739406932",
-      color: "green"
+      color: "blue"
     }
   ];
 
@@ -108,8 +108,8 @@ Looking forward to hearing from you!`;
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8 relative overflow-hidden">
               {/* Background Elements */}
-              <div className="absolute top-4 right-4 w-16 h-16 border border-blue-100 rounded-full opacity-50"></div>
-              <div className="absolute bottom-6 left-4 w-12 h-12 border border-cyan-100 rounded-full opacity-50"></div>
+              <div className="absolute top-4 right-4 w-16 h-16 border border-[#22aed8]/50 rounded-full opacity-50"></div>
+              <div className="absolute bottom-6 left-4 w-12 h-12 border border-[#22aed8]/50 rounded-full opacity-50"></div>
               
               <div className="relative z-10">
                 <div className="flex items-center space-x-3 mb-6">
@@ -120,8 +120,8 @@ Looking forward to hearing from you!`;
 
                 {isSubmitted ? (
                   <div className="text-center py-12">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <FaWhatsapp className="w-8 h-8 text-green-600" />
+                    <div className="w-16 h-16 bg-[#22aed8]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <FaWhatsapp className="w-8 h-8 text-[#22aed8]" />
                     </div>
                     <h4 className="text-xl font-bold text-gray-800 mb-2">WhatsApp Opened!</h4>
                     <p className="text-gray-600">Your message has been prepared. Send it to start the conversation!</p>
@@ -140,7 +140,7 @@ Looking forward to hearing from you!`;
                           value={formData.firstName}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#22aed8] focus:border-transparent transition-all duration-200"
                           placeholder="Enter your first name"
                         />
                       </div>
@@ -155,7 +155,7 @@ Looking forward to hearing from you!`;
                           value={formData.lastName}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#22aed8] focus:border-transparent transition-all duration-200"
                           placeholder="Enter your last name"
                         />
                       </div>
@@ -173,7 +173,7 @@ Looking forward to hearing from you!`;
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#22aed8] focus:border-transparent transition-all duration-200"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -188,7 +188,7 @@ Looking forward to hearing from you!`;
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#22aed8] focus:border-transparent transition-all duration-200"
                           // placeholder="+265998552002"
                         />
                       </div>
@@ -205,7 +205,7 @@ Looking forward to hearing from you!`;
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#22aed8] focus:border-transparent transition-all duration-200"
                         placeholder="What can we help you with?"
                       />
                     </div>
@@ -221,14 +221,14 @@ Looking forward to hearing from you!`;
                         onChange={handleInputChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 resize-none"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#22aed8] focus:border-transparent transition-all duration-200 resize-none"
                         placeholder="Tell us about your travel plans, preferred destinations, dates, or any specific requirements..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-green-700 hover:to-emerald-700 transition-all duration-200 flex items-center justify-center space-x-2 group"
+                      className="w-full bg-gradient-to-r from-[#22aed8] to-[#1e9db5] text-white font-semibold py-4 px-6 rounded-xl hover:from-[#1e9db5] hover:to-[#1c8a9f] transition-all duration-200 flex items-center justify-center space-x-2 group"
                     >
                       <FaWhatsapp className="w-5 h-5" />
                       <span>Send via WhatsApp</span>
@@ -237,9 +237,9 @@ Looking forward to hearing from you!`;
 
                     {/* Preview Message */}
                     {(formData.firstName || formData.lastName || formData.email || formData.phone || formData.subject || formData.message) && (
-                      <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
-                        <h4 className="text-sm font-semibold text-green-800 mb-2">WhatsApp Message Preview:</h4>
-                        <div className="text-xs text-green-700 whitespace-pre-line font-mono bg-white p-3 rounded-lg">
+                      <div className="mt-6 p-4 bg-[#22aed8]/10 border border-[#22aed8]/20 rounded-xl">
+                        <h4 className="text-sm font-semibold text-[#22aed8] mb-2">WhatsApp Message Preview:</h4>
+                        <div className="text-xs text-[#22aed8] whitespace-pre-line font-mono bg-white p-3 rounded-lg">
                           {formatWhatsAppMessage()}
                         </div>
                       </div>
@@ -285,9 +285,6 @@ Looking forward to hearing from you!`;
                 );
               })}
             </div>
-
-
- 
           </div>
         </div>
       </div>
