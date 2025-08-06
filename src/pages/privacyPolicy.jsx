@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
               If you wish to access any of the rights set out above, we may ask you for additional information to confirm your identity and for security purposes, in particular, before disclosing personal information to you.
             </p>
             <p className="text-slate-700 mb-4">
-              You can exercise your rights by emailing us at mailto:sales@greyfalcontravles.com or by sending us a communication at Grey Falcon Travels LTD, Unit C (1st floor offices) 122 Bridge Road, Leicester, LE5 3QN, United Kingdom. You will receive acknowledgement of your request and we will advise you of the timeframe within which you will receive your information pack. We endeavor to respond to such requests within a month or less, although we reserve the right to extend this period for complex requests.
+              You can exercise your rights by emailing us at sales@greyfalcontravels.com or by sending us a communication at Grey Falcon Travels LTD, Unit C (1st floor offices) 122 Bridge Road, Leicester, LE5 3QN, United Kingdom. You will receive acknowledgement of your request and we will advise you of the timeframe within which you will receive your information pack. We endeavor to respond to such requests within a month or less, although we reserve the right to extend this period for complex requests.
             </p>
           </section>
 
